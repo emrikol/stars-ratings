@@ -1,0 +1,24 @@
+{
+  "name": "stars-cgb-guten-block",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cgb-scripts start",
+    "build": "cgb-scripts build",
+    "eject": "cgb-scripts eject"
+  },
+  "dependencies": {
+    "cgb-scripts": "1.11.1",
+    "classnames": "^2.2.6"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-plugin-wordpress": "^0.1.0"
+  },
+  "eslintConfig": {
+    "extends": "plugin:wordpress/recommended",
+    "plugins": [
+      "wordpress"
+    ]
+  }
+}

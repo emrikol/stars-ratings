@@ -1,0 +1,99 @@
+//colors
+$color_disabled: #ddd;
+$color_active: #ffd700;
+$color_lighten: #ffed85;
+
+//fonts
+@font-face {
+	font-family: 'fontello';
+	src: url('font/fontello.eot');
+	src: url('font/fontello.eot#iefix') format('embedded-opentype'),
+			 url('font/fontello.woff2') format('woff2'),
+			 url('font/fontello.woff') format('woff'),
+			 url('font/fontello.ttf') format('truetype'),
+			 url('font/fontello.svg#fontello') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+$icon_font: 'fontello';
+
+//icons
+$icon_full: "\e800";
+$icon_half: "\e801";
+
+.stars-rating {
+	.editor-hint {
+		color: grey;
+		font-style: italic;
+		font-size: .75em !important;
+		margin: 0;
+	}
+}
+
+.rating {
+	// Have to do this crazy thing since the WordPress editor hijacks this selector.
+	input[type=radio]:checked+label:before {
+		color: $color_active;
+	}
+
+	border: none;
+	display: inline-block;
+
+	fieldset {
+		margin: 0;
+		padding: 0;
+	}
+
+	label {
+		margin: 0;
+		padding: 0;
+	}
+
+	> input[type=radio] {
+		display: none;
+		&:checked {
+			~ label {
+				color: $color_active;
+				&:hover {
+					color: $color_lighten;
+					~ label {
+						color: $color_lighten;
+					}
+				}
+				&:before {
+					//color: $color_active;
+				}
+			}
+			+ label:hover {
+				color: $color_lighten;
+			}
+		}
+	}
+
+	> label {
+		color: $color_disabled;
+		float: right;
+		&:before {
+			margin: 5px;
+			font-size: 3em;
+			font-family: $icon_font;
+			display: inline-block;
+			content: $icon_full;
+		}
+		&:hover ~ input:checked ~ label {
+			color: $color_lighten;
+		}
+	}
+
+	> .half:before {
+		content: $icon_half;
+		position: absolute;
+	}
+
+	&:not(:checked) > label:hover {
+		color: $color_active;
+		~ label {
+			color: $color_active;
+		}
+	}
+}
