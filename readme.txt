@@ -22,3 +22,7 @@ Install like any other plugin, directly from your plugins page or manually by co
 = 1.0.0 =
 
 First Version
+
+= 1.0.1 =
+
+WordPress 5.0 Fixes
