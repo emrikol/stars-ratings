@@ -25,7 +25,7 @@ function stars_ratings_block_assets() {
 	wp_enqueue_style(
 		'stars-ratings-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		array( 'wp-blocks' ) // Dependency to include the CSS after it.
+		array( ) // Dependency to include the CSS after it.
 	);
 } // End function stars_ratings_block_assets().
 

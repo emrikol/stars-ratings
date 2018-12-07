@@ -28,6 +28,24 @@ $icon_half: "\e801";
 		font-size: .75em !important;
 		margin: 0;
 	}
+	span {
+		color: $color_disabled;
+		font-family: $icon_font;
+		&.active {
+			color: $color_active;
+		}
+		&:before {
+			margin: 5px;
+			font-size: 3em;
+			font-family: $icon_font;
+			display: inline-block;
+			content: $icon_full;
+		}
+		&.half:before {
+			content: $icon_half;
+			position: absolute;
+		}
+	}
 }
 
 .rating {
